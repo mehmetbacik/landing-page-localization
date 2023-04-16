@@ -29,20 +29,30 @@ function App() {
           <div className='logo'>
             <img src='images/logo.svg' alt='Logo' />
           </div>
-          <div className='language'>
-            <button onClick={() => setLocale('tr-TR')}>TR</button>
-            <button onClick={() => setLocale('en-US')}>EN</button>
+          <div className='language flex gap-3'>
+            <button onClick={() => setLocale('tr-TR')}><img src='images/tr.png' alt='tr' /></button>
+            <button onClick={() => setLocale('en-US')}><img src='images/en.png' alt='en' /></button>
           </div>
         </div>
-        <IntlProvider locale={locale} messages={messages[locale]}>
-          <FormattedMessage id="title" />
-          <p>
-            <FormattedMessage id="description" />
-          </p>
-          <FormattedMessage id="button" />
-          <br /><br />
+        <div className='main grid grid-cols-2 gap-4 pt-6'>
+          <div className='images'>
+            <img src='images/illustration-mockups.svg' alt='img' />
+          </div>
+          <div className='content'>
+            <IntlProvider locale={locale} messages={messages[locale]}>
+              <div className='headline text-5xl font-bold text-white'>
+                <FormattedMessage id="title" />
+              </div>
+              <div className='text text-lg text-white py-5'>
+                <FormattedMessage id="description" />
+              </div>
+              <button className='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-10 rounded-full'>
+                <FormattedMessage id="button" />
+              </button>
+            </IntlProvider>
+          </div>
+        </div>
 
-        </IntlProvider>
       </div>
     </div>
   );
