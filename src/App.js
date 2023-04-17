@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <div className='container mx-auto px-2'>
-        <div className='header flex justify-between items-center py-10'>
+        <div className='header flex justify-between items-center py-12'>
           <div className='logo'>
             <img src='images/logo.svg' alt='Logo' />
           </div>
@@ -34,25 +34,31 @@ function App() {
             <button onClick={() => setLocale('en-US')}><img src='images/en.png' alt='en' /></button>
           </div>
         </div>
-        <div className='main grid grid-cols-2 gap-4 pt-6'>
+        <div className='main grid items-center grid-cols-2 gap-10 pt-8'>
           <div className='images'>
             <img src='images/illustration-mockups.svg' alt='img' />
           </div>
-          <div className='content'>
+          <div className='content mb-12'>
             <IntlProvider locale={locale} messages={messages[locale]}>
-              <div className='headline text-5xl font-bold text-white'>
+              <div className='headline text-5xl leading-normal font-bold text-white'>
                 <FormattedMessage id="title" />
               </div>
-              <div className='text text-lg text-white py-5'>
+              <div className='text text-xl leading-normal text-white py-5'>
                 <FormattedMessage id="description" />
               </div>
-              <button className='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-10 rounded-full'>
+              <button className='btn tracking-wider text-lg'>
                 <FormattedMessage id="button" />
               </button>
             </IntlProvider>
           </div>
         </div>
-
+        <div className='footer pt-4'>
+          <div className='social flex justify-end items-center gap-2'>
+            <img src='images/fb.png' alt='Logo' />
+            <img src='images/tw.png' alt='Logo' />
+            <img src='images/in.png' alt='Logo' />
+          </div>
+        </div>
       </div>
     </div>
   );
