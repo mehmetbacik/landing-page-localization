@@ -2,10 +2,6 @@
   height: 100%;
 }
 
-.App .main .content .headline {
-  padding-right: 30%;
-}
-
 .App .main .images img {
   width: 100%;
 }
@@ -27,4 +23,20 @@
 .App .footer .social img {
   background-color: var(--white);
   border-radius: 100%;
+}
+
+@media (max-width: 768px) { 
+  .App .header .logo img {
+    width: 50%;
+  }
+  .App .main .content .btn {
+    border-radius: 30px;
+    padding: 12px 70px;
+  }
+}
+  
+@media (min-width: 1300px) { 
+  .App .main .content .headline {
+    padding-right: 20%;
+  }
 }

@@ -32,3 +32,10 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 768px) { 
+  body {
+    background-image: url(../public/images/bg-mobile.svg);
+    background-position: top;
+  }
+}
